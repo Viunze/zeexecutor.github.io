@@ -25,6 +25,22 @@
             --neon-red: #ff3131;
         }
 
+        /* --- LIGHT MODE VARIABLES --- */
+        body.light-mode {
+            --bg-color: #f0f0f0;
+            --card-bg: #ffffff;
+            --text-color: #1a1a1a;
+            --border-color: #ddd;
+            --working-color: #2e7d32;
+            --not-working-color: #c62828;
+
+            --neon-green: #2ecc71;
+            --neon-blue: #3498db;
+            --neon-pink: #e91e63;
+            --neon-yellow: #f1c40f;
+            --neon-red: #e74c3c;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
@@ -35,6 +51,7 @@
             overflow-x: hidden;
             cursor: none;
             text-transform: uppercase;
+            transition: background-color 0.5s, color 0.5s;
         }
         
         .cursor-trail-element {
@@ -49,6 +66,9 @@
             transition: transform 0.5s ease-out, opacity 0.5s ease-out;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
             z-index: 9999;
+        }
+        body.light-mode .cursor-trail-element {
+            filter: invert(1);
         }
         
         #main-content {
@@ -82,6 +102,11 @@
                 text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
             }
         }
+        body.light-mode h1 {
+            text-shadow: none;
+            color: var(--text-color);
+            animation: none;
+        }
 
         h1 {
             font-family: 'Orbitron', sans-serif;
@@ -99,12 +124,20 @@
             font-size: 1.1em;
             color: #ccc;
             margin-bottom: 5px;
+            transition: color 0.5s;
+        }
+        body.light-mode .subtitle {
+            color: #555;
         }
 
         .last-updated {
             font-size: 0.8em;
             color: #777;
             margin-bottom: 25px;
+            transition: color 0.5s;
+        }
+        body.light-mode .last-updated {
+            color: #999;
         }
 
         .search-container {
@@ -117,17 +150,26 @@
             padding: 12px 20px;
             border-radius: 30px;
             border: 2px solid var(--neon-blue); 
-            background-color: #333;
-            color: #fff;
+            background-color: var(--card-bg);
+            color: var(--text-color);
             font-size: 1em;
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
             outline: none;
             transition: all 0.3s ease;
         }
+        body.light-mode #search-input {
+            background-color: #fff;
+            border-color: #999;
+            box-shadow: none;
+        }
 
         #search-input:focus {
-            border-color: #fff;
+            border-color: var(--neon-blue);
             box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+        body.light-mode #search-input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
         }
 
         /* Gaya untuk Filter Button */
@@ -140,9 +182,9 @@
         }
 
         .filter-buttons button {
-            background: #222;
+            background: var(--card-bg);
             color: var(--text-color);
-            border: 2px solid #555;
+            border: 2px solid var(--border-color);
             padding: 10px 20px;
             border-radius: 20px;
             font-weight: 600;
@@ -150,12 +192,21 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
         }
+        body.light-mode .filter-buttons button {
+            background-color: #f1f1f1;
+        }
 
         .filter-buttons button:hover,
         .filter-buttons button.active {
             border-color: var(--neon-blue);
             color: var(--neon-blue);
             box-shadow: 0 0 10px var(--neon-blue);
+        }
+        body.light-mode .filter-buttons button:hover,
+        body.light-mode .filter-buttons button.active {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
         }
         
         .platform-title {
@@ -167,6 +218,11 @@
             margin: 40px 0 20px 0;
             border-bottom: 2px solid var(--neon-pink);
             padding-bottom: 5px;
+            transition: color 0.5s, border-color 0.5s;
+        }
+        body.light-mode .platform-title {
+            color: #e91e63;
+            border-color: #e91e63;
         }
 
         .executor-list {
@@ -181,7 +237,7 @@
             border-radius: 15px;
             padding: 20px;
             text-align: left;
-            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s, background-color 0.5s;
             position: relative;
             border: 1px solid var(--border-color);
             display: block; /* Default display */
@@ -191,19 +247,30 @@
         .neon-red {
             color: var(--neon-red);
             text-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red);
+            transition: color 0.5s, text-shadow 0.5s;
         }
         .neon-blue {
             color: var(--neon-blue);
             text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+            transition: color 0.5s, text-shadow 0.5s;
         }
         .neon-pink {
             color: var(--neon-pink);
             text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+            transition: color 0.5s, text-shadow 0.5s;
         }
         .neon-yellow {
             color: var(--neon-yellow);
             text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow);
+            transition: color 0.5s, text-shadow 0.5s;
         }
+        body.light-mode .executor-card h3 {
+            text-shadow: none;
+        }
+        body.light-mode .neon-red { color: #e74c3c; }
+        body.light-mode .neon-blue { color: #3498db; }
+        body.light-mode .neon-pink { color: #e91e63; }
+        body.light-mode .neon-yellow { color: #f1c40f; }
 
         /* DYNAMIC HOVER */
         .neon-red-card:hover {
@@ -244,6 +311,9 @@
             font-size: 0.9em;
             margin-bottom: 15px;
         }
+        body.light-mode .platform {
+            color: #666;
+        }
 
         .status-badge {
             display: inline-block;
@@ -273,7 +343,12 @@
             background-color: var(--working-color);
             color: var(--bg-color);
             animation: glowing-working 2s infinite ease-in-out;
+            transition: background-color 0.5s, color 0.5s;
         }
+        body.light-mode .status-working {
+            color: #fff;
+        }
+
 
         .status-nowork {
             background-color: var(--not-working-color);
@@ -315,12 +390,45 @@
             pointer-events: none;
         }
 
-        /* Gaya baru untuk bagian media sosial */
+        /* Gaya untuk tombol Copy Link */
+        .copy-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--neon-yellow);
+            color: var(--neon-yellow);
+            font-weight: 700;
+            font-size: 1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, color 0.3s, border-color 0.3s;
+            box-shadow: 0 0 5px var(--neon-yellow);
+        }
+        body.light-mode .copy-button {
+            background-color: #fff;
+            box-shadow: 0 0 5px var(--neon-yellow);
+        }
+        
+        .copy-button:hover {
+            background-color: var(--neon-yellow);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px var(--neon-yellow);
+        }
+        
+        /* Gaya untuk bagian media sosial */
         .social-media-links {
             margin-top: 50px;
             padding-top: 20px;
             border-top: 2px solid var(--neon-pink);
             text-align: center;
+        }
+        body.light-mode .social-media-links {
+            border-top: 2px solid var(--neon-pink);
         }
 
         .social-media-links h4 {
@@ -329,6 +437,9 @@
             color: var(--neon-blue);
             margin-bottom: 20px;
             text-shadow: 0 0 5px var(--neon-blue);
+        }
+        body.light-mode .social-media-links h4 {
+            text-shadow: none;
         }
 
         .social-media-links a {
@@ -341,13 +452,51 @@
             color: var(--text-color);
             text-shadow: none;
         }
+        body.light-mode .social-media-links a {
+            color: #444;
+        }
 
         .social-media-links a:hover {
             transform: translateY(-5px);
             color: var(--neon-pink);
             text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
         }
+        body.light-mode .social-media-links a:hover {
+            color: #e91e63;
+            text-shadow: none;
+        }
 
+        /* Tombol Toggle Tema */
+        #theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            color: var(--text-color);
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5em;
+            z-index: 1000;
+            transition: background 0.3s, border-color 0.3s, color 0.3s;
+        }
+        #theme-toggle-btn:hover {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+        body.light-mode #theme-toggle-btn {
+            background-color: #f1f1f1;
+            border-color: #ccc;
+            color: #555;
+        }
+        body.light-mode #theme-toggle-btn:hover {
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+        
         @media (max-width: 600px) {
             h1 { font-size: 2em; }
             .subtitle { font-size: 1em; }
@@ -360,6 +509,7 @@
     </style>
 </head>
 <body>
+    <button id="theme-toggle-btn">☀️</button>
 
     <div class="container" id="main-content">
         <h1>ZEEXECUTOR</h1>
@@ -379,246 +529,280 @@
         <h2 class="platform-title">ANDROID EXECUTORS</h2>
 
         <div class="executor-list" id="executor-list-android">
-            <div class="executor-card neon-blue-card" data-name="KRNL" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="KRNL" data-platform="Android" data-status="Working" data-link="https://krnl.ca/">
                 <h3 class="neon-blue">KRNL</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://krnl.ca/" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://krnl.ca/">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-pink-card" data-name="FLUXUS Subzero" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-pink-card" data-name="FLUXUS Subzero" data-platform="Android" data-status="Working" data-link="https://webfiles.pro/file/Fluxus.apk">
                 <h3 class="neon-pink">FLUXUS <small>(SUBZERO)</small></h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://webfiles.pro/file/Fluxus.apk" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://webfiles.pro/file/Fluxus.apk">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-yellow-card" data-name="DELTA" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-yellow-card" data-name="DELTA" data-platform="Android" data-status="Working" data-link="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file">
                 <h3 class="neon-yellow">DELTA</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-red-card" data-name="FROSTWARE" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-red-card" data-name="FROSTWARE" data-platform="Android" data-status="Working" data-link="https://www.mediafire.com/file/67m83qe9qodjilz/Frostware+Gen-X+V3.6.apk/file">
                 <h3 class="neon-red">FROSTWARE</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/67m83qe9qodjilz/Frostware+Gen-X+V3.6.apk/file" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://www.mediafire.com/file/67m83qe9qodjilz/Frostware+Gen-X+V3.6.apk/file">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-blue-card" data-name="ARCEUS X" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="ARCEUS X" data-platform="Android" data-status="Working" data-link="https://www.mediafire.com/file/6lcgdmn244ta2n5/ArceusX_1.6.4_2.668.658.ipa/file">
                 <h3 class="neon-blue">ARCEUS X</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/6lcgdmn244ta2n5/ArceusX_1.6.4_2.668.658.ipa/file" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://www.mediafire.com/file/6lcgdmn244ta2n5/ArceusX_1.6.4_2.668.658.ipa/file">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-pink-card" data-name="CODEX" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-pink-card" data-name="CODEX" data-platform="Android" data-status="Working" data-link="https://www.mediafire.com/file/ytyjk543b2ng8zs/Codex+v2.684.apk/file">
                 <h3 class="neon-pink">CODEX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/ytyjk543b2ng8zs/Codex+v2.684.apk/file" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://www.mediafire.com/file/ytyjk543b2ng8zs/Codex+v2.684.apk/file">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-yellow-card" data-name="CRYPTIC" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-yellow-card" data-name="CRYPTIC" data-platform="Android" data-status="Working" data-link="https://www.mediafire.com/file/7rn43l963klk9mj/Cryptic+2.684.688+APK.apk/file">
                 <h3 class="neon-yellow">CRYPTIC</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/7rn43l963klk9mj/Cryptic+2.684.688+APK.apk/file" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://www.mediafire.com/file/7rn43l963klk9mj/Cryptic+2.684.688+APK.apk/file">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-red-card" data-name="VEGA X" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-red-card" data-name="VEGA X" data-platform="Android" data-status="Working" data-link="https://cdn.discordapp.com/attachments/1191528978167640125/1402142072491741184/Vega_X.apk">
                 <h3 class="neon-red">VEGA X</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://cdn.discordapp.com/attachments/1191528978167640125/1402142072491741184/Vega_X.apk" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://cdn.discordapp.com/attachments/1191528978167640125/1402142072491741184/Vega_X.apk">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-blue-card" data-name="TRIGON" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="TRIGON" data-platform="Android" data-status="Working" data-link="https://trigonevo.com/download?os=android&fs=mediafire">
                 <h3 class="neon-blue">TRIGON</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://trigonevo.com/download?os=android&fs=mediafire" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://trigonevo.com/download?os=android&fs=mediafire">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-pink-card" data-name="RONIX" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-pink-card" data-name="RONIX" data-platform="Android" data-status="Working" data-link="https://wrdcdn.net/r/154522/1754357527605/Ronix_684_(arm64).apk">
                 <h3 class="neon-pink">RONIX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://wrdcdn.net/r/154522/1754357527605/Ronix_684_(arm64).apk" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://wrdcdn.net/r/154522/1754357527605/Ronix_684_(arm64).apk">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-yellow-card" data-name="VORNEX" data-platform="Android" data-status="Not Working">
+            <div class="executor-card neon-yellow-card" data-name="VORNEX" data-platform="Android" data-status="Not Working" data-link="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file">
                 <h3 class="neon-yellow">VORNEX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file" class="get-button disabled" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-red-card" data-name="H202" data-platform="Android" data-status="Not Working">
+            <div class="executor-card neon-red-card" data-name="H202" data-platform="Android" data-status="Not Working" data-link="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY">
                 <h3 class="neon-red">H202</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY" class="get-button disabled" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-blue-card" data-name="NEBULA" data-platform="Android" data-status="No Information">
+            <div class="executor-card neon-blue-card" data-name="NEBULA" data-platform="Android" data-status="No Information" data-link="#">
                 <h3 class="neon-blue">NEBULA</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
                 <a href="#" class="get-button disabled">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="#">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-pink-card" data-name="ILLUSION" data-platform="Android" data-status="No Information">
+            <div class="executor-card neon-pink-card" data-name="ILLUSION" data-platform="Android" data-status="No Information" data-link="#">
                 <h3 class="neon-pink">ILLUSION</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
                 <a href="#" class="get-button disabled">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="#">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-yellow-card" data-name="CUBIX" data-platform="Android" data-status="No Information">
+            <div class="executor-card neon-yellow-card" data-name="CUBIX" data-platform="Android" data-status="No Information" data-link="#">
                 <h3 class="neon-yellow">CUBIX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
                 <a href="#" class="get-button disabled">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="#">Copy Link</a>
             </div>
         </div>
 
         <h2 class="platform-title">WINDOWS EXECUTORS</h2>
 
         <div class="executor-list" id="executor-list-windows">
-            <div class="executor-card neon-red-card" data-name="bunni lol" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-red-card" data-name="bunni lol" data-platform="Windows" data-status="Working" data-link="https://getbunni.lol/">
                 <h3 class="neon-red">bunni lol</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://getbunni.lol/" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://getbunni.lol/">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-blue-card" data-name="zenith (buy)" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="zenith (buy)" data-platform="Windows" data-status="Working" data-link="https://zenith.win/">
                 <h3 class="neon-blue">zenith <small>(buy)</small></h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://zenith.win/" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://zenith.win/">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-pink-card" data-name="swift" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-pink-card" data-name="swift" data-platform="Windows" data-status="Working" data-link="https://getswift.gg/download">
                 <h3 class="neon-pink">swift</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://getswift.gg/download" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://getswift.gg/download">Copy Link</a>
             </div>
             
-            <div class="executor-card neon-yellow-card" data-name="velocity" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-yellow-card" data-name="velocity" data-platform="Windows" data-status="Working" data-link="https://getvelocity.live/">
                 <h3 class="neon-yellow">velocity</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://getvelocity.live/" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://getvelocity.live/">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-red-card" data-name="volcano" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-red-card" data-name="volcano" data-platform="Windows" data-status="Working" data-link="https://file.volcano.best/Download.zip">
                 <h3 class="neon-red">volcano</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://file.volcano.best/Download.zip" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://file.volcano.best/Download.zip">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-blue-card" data-name="pottasium (buy)" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="pottasium (buy)" data-platform="Windows" data-status="Working" data-link="https://potassium.pro/">
                 <h3 class="neon-blue">pottasium <small>(buy)</small></h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://potassium.pro/" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://potassium.pro/">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-pink-card" data-name="plutora" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-pink-card" data-name="plutora" data-platform="Windows" data-status="Working" data-link="https://wrdcdn.net/r/87882/1747944758923/plutora%20v2.0.0.zip">
                 <h3 class="neon-pink">plutora</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://wrdcdn.net/r/87882/1747944758923/plutora%20v2.0.0.zip" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://wrdcdn.net/r/87882/1747944758923/plutora%20v2.0.0.zip">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-yellow-card" data-name="seliware (buy)" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-yellow-card" data-name="seliware (buy)" data-platform="Windows" data-status="Working" data-link="https://seliware.com/">
                 <h3 class="neon-yellow">seliware <small>(buy)</small></h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://seliware.com/" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://seliware.com/">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-red-card" data-name="jjsploit" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-red-card" data-name="jjsploit" data-platform="Windows" data-status="Working" data-link="https://github.com/wcrddn/wcrddn.github.io/raw/refs/heads/main/0605/jjsploit_8.15.0_x64_en-US.msi">
                 <h3 class="neon-red">jjsploit</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://github.com/wcrddn/wcrddn.github.io/raw/refs/heads/main/0605/jjsploit_8.15.0_x64_en-US.msi" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://github.com/wcrddn/wcrddn.github.io/raw/refs/heads/main/0605/jjsploit_8.15.0_x64_en-US.msi">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-blue-card" data-name="solara" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="solara" data-platform="Windows" data-status="Working" data-link="https://getsolara.dev/download/static/files/BootstrapperNew.exe">
                 <h3 class="neon-blue">solara</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://getsolara.dev/download/static/files/BootstrapperNew.exe" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://getsolara.dev/download/static/files/BootstrapperNew.exe">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-pink-card" data-name="trigon" data-platform="Windows" data-status="Not Working">
+            <div class="executor-card neon-pink-card" data-name="trigon" data-platform="Windows" data-status="Not Working" data-link="https://gofile.io/d/leLUN2">
                 <h3 class="neon-pink">trigon</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://gofile.io/d/leLUN2" class="get-button disabled" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="https://gofile.io/d/leLUN2">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-yellow-card" data-name="drift" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-yellow-card" data-name="drift" data-platform="Windows" data-status="Working" data-link="https://wrdcdn.net/r/118757/1748613440294/Drift1.0.3.zip">
                 <h3 class="neon-yellow">drift</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://wrdcdn.net/r/118757/1748613440294/Drift1.0.3.zip" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://wrdcdn.net/r/118757/1748613440294/Drift1.0.3.zip">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-red-card" data-name="sirthurt (buy)" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-red-card" data-name="sirthurt (buy)" data-platform="Windows" data-status="Working" data-link="https://sirhurt.net/">
                 <h3 class="neon-red">sirthurt <small>(buy)</small></h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://sirhurt.net/" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://sirhurt.net/">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-blue-card" data-name="saturn x" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="saturn x" data-platform="Windows" data-status="Working" data-link="https://saturn-x-site.vercel.app/Bootstrapper.exe">
                 <h3 class="neon-blue">saturn x</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://saturn-x-site.vercel.app/Bootstrapper.exe" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://saturn-x-site.vercel.app/Bootstrapper.exe">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-pink-card" data-name="xeno" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-pink-card" data-name="xeno" data-platform="Windows" data-status="Working" data-link="https://www.xeno.onl/download">
                 <h3 class="neon-pink">xeno</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.xeno.onl/download" class="get-button" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button" data-link="https://www.xeno.onl/download">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-yellow-card" data-name="revelix" data-platform="Windows" data-status="Not Working">
+            <div class="executor-card neon-yellow-card" data-name="revelix" data-platform="Windows" data-status="Not Working" data-link="https://filerift.com/file/Hr0PxidPHf">
                 <h3 class="neon-yellow">revelix</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://filerift.com/file/Hr0PxidPHf" class="get-button disabled" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="https://filerift.com/file/Hr0PxidPHf">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-red-card" data-name="awp (buy)" data-platform="Windows" data-status="Not Working">
+            <div class="executor-card neon-red-card" data-name="awp (buy)" data-platform="Windows" data-status="Not Working" data-link="https://buyawp.gg/">
                 <h3 class="neon-red">awp <small>(buy)</small></h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://buyawp.gg/" class="get-button disabled" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="https://buyawp.gg/">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-blue-card" data-name="ronix" data-platform="Windows" data-status="Not Working">
+            <div class="executor-card neon-blue-card" data-name="ronix" data-platform="Windows" data-status="Not Working" data-link="https://cdnwrd2.com/r/154522/1743965069251/Bootstrapper.exe">
                 <h3 class="neon-blue">ronix</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://cdnwrd2.com/r/154522/1743965069251/Bootstrapper.exe" class="get-button disabled" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="https://cdnwrd2.com/r/154522/1743965069251/Bootstrapper.exe">Copy Link</a>
             </div>
 
-            <div class="executor-card neon-pink-card" data-name="wave" data-platform="Windows" data-status="Not Working">
+            <div class="executor-card neon-pink-card" data-name="wave" data-platform="Windows" data-status="Not Working" data-link="https://getwave.gg/">
                 <h3 class="neon-pink">wave</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://getwave.gg/" class="get-button disabled" target="_blank">Get Executor</a>
+                <a href="#" class="copy-button disabled" data-link="https://getwave.gg/">Copy Link</a>
             </div>
         </div>
     </div>
@@ -634,6 +818,36 @@
         const searchInput = document.getElementById('search-input');
         const allExecutorCards = document.querySelectorAll('.executor-card');
         const filterButtons = document.querySelectorAll('.filter-btn');
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const body = document.body;
+
+        // Cek preferensi tema dari local storage atau sistem
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            themeToggleBtn.textContent = '🌙';
+        } else if (savedTheme === 'dark') {
+            body.classList.remove('light-mode');
+            themeToggleBtn.textContent = '☀️';
+        } else if (prefersDarkMode) {
+            body.classList.remove('light-mode');
+            themeToggleBtn.textContent = '☀️';
+        } else {
+            body.classList.add('light-mode');
+            themeToggleBtn.textContent = '🌙';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                themeToggleBtn.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeToggleBtn.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
 
         function filterExecutors(filter) {
             allExecutorCards.forEach(card => {
@@ -685,6 +899,37 @@
             });
         });
         
+        // Fungsi untuk Copy Link
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // Mencegah link dari pindah halaman
+                const link = this.getAttribute('data-link');
+                
+                // Menyalin ke clipboard
+                navigator.clipboard.writeText(link).then(() => {
+                    const originalText = this.textContent;
+                    const originalColor = this.style.color;
+                    const originalBorder = this.style.borderColor;
+                    const originalShadow = this.style.boxShadow;
+
+                    this.textContent = 'COPIED!';
+                    this.style.borderColor = 'var(--neon-green)';
+                    this.style.color = 'var(--neon-green)';
+                    this.style.boxShadow = '0 0 10px var(--neon-green)';
+                    
+                    // Mengembalikan teks dan style setelah 2 detik
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.borderColor = originalBorder;
+                        this.style.color = originalColor;
+                        this.style.boxShadow = originalShadow;
+                    }, 2000);
+                }).catch(err => {
+                    alert('Gagal menyalin link: ' + err);
+                });
+            });
+        });
+
         // Efek kursor
         const colors = ['#39ff14', '#00e6ff', '#ff00ff', '#f0ff00', '#ff3131'];
         let lastTimestamp = 0;
