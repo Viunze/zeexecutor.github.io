@@ -156,7 +156,7 @@
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
             outline: none;
             transition: all 0.3s ease;
-            box-sizing: border-box; /* PERBAIKAN */
+            box-sizing: border-box;
         }
         body.light-mode #search-input {
             background-color: #fff;
@@ -241,7 +241,8 @@
             transition: transform 0.3s, box-shadow 0.3s, border 0.3s, background-color 0.5s;
             position: relative;
             border: 1px solid var(--border-color);
-            display: block; /* Default display */
+            display: block;
+            cursor: pointer; /* Menjadikan kartu bisa diklik */
         }
         
         /* WARNA NEON UNTUK NAMA EXECUTOR */
@@ -384,7 +385,7 @@
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
-            box-sizing: border-box; /* PERBAIKAN UTAMA DI SINI */
+            box-sizing: border-box;
         }
         
         .get-button:hover {
@@ -415,7 +416,7 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, color 0.3s, border-color 0.3s;
             box-shadow: 0 0 5px var(--neon-yellow);
-            box-sizing: border-box; /* PERBAIKAN UTAMA DI SINI */
+            box-sizing: border-box;
         }
         body.light-mode .copy-button {
             background-color: #fff;
@@ -474,6 +475,99 @@
             color: #e91e63;
             text-shadow: none;
         }
+        
+        /* --- MODAL (POP-UP) STYLES --- */
+        .modal {
+            display: none; /* Sembunyikan secara default */
+            position: fixed;
+            z-index: 1001; /* Di atas segalanya */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 10% auto;
+            padding: 30px;
+            border: 2px solid var(--neon-blue);
+            width: 80%;
+            max-width: 600px;
+            border-radius: 20px;
+            position: relative;
+            animation: slideIn 0.5s;
+            text-align: left;
+        }
+        body.light-mode .modal-content {
+            border-color: #3498db;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+            margin: 0;
+        }
+        body.light-mode .modal-header h2 {
+            text-shadow: none;
+        }
+
+        .close-button {
+            color: var(--text-color);
+            font-size: 2.5em;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--neon-red);
+            text-decoration: none;
+            cursor: pointer;
+            transform: rotate(90deg);
+        }
+        
+        .modal-content p, .modal-content ul {
+            text-transform: none; /* Kembali ke lowercase untuk teks biasa */
+        }
+        
+        .modal-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-pink);
+            font-size: 1.3em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-top: 20px;
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+        body.light-mode .modal-content h3 {
+            text-shadow: none;
+        }
+        
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
 
         /* Tombol Toggle Tema */
         #theme-toggle-btn {
@@ -514,6 +608,10 @@
                 display: block;
                 margin: 10px auto;
             }
+            .modal-content {
+                width: 90%;
+                margin: 5% auto;
+            }
         }
     </style>
 </head>
@@ -540,7 +638,9 @@
         <h2 class="platform-title">ANDROID EXECUTORS</h2>
 
         <div class="executor-list" id="executor-list-android">
-            <div class="executor-card neon-blue-card" data-name="KRNL" data-platform="Android" data-status="Working" data-link="https://krnl.ca/">
+            <div class="executor-card neon-blue-card" data-name="KRNL" data-platform="Android" data-status="Working" data-link="https://krnl.ca/"
+                 data-description="Krnl is a powerful and reliable Android executor known for its stability and user-friendly interface. It's often updated to bypass the latest security patches, making it a top choice for exploit users."
+                 data-features="Keyless,High stability,Fast execution,Regular updates">
                 <h3 class="neon-blue">KRNL</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
@@ -550,7 +650,9 @@
                 </div>
             </div>
             
-            <div class="executor-card neon-pink-card" data-name="FLUXUS Subzero" data-platform="Android" data-status="Working" data-link="https://webfiles.pro/file/Fluxus.apk">
+            <div class="executor-card neon-pink-card" data-name="FLUXUS Subzero" data-platform="Android" data-status="Working" data-link="https://webfiles.pro/file/Fluxus.apk"
+                 data-description="Fluxus is one of the most popular and trusted exploits in the community, providing a robust script execution environment. Its Subzero version offers advanced security bypasses."
+                 data-features="Multi-platform support,Key system,Fast injection,Large script hub">
                 <h3 class="neon-pink">FLUXUS <small>(SUBZERO)</small></h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
@@ -560,7 +662,9 @@
                 </div>
             </div>
             
-            <div class="executor-card neon-yellow-card" data-name="DELTA" data-platform="Android" data-status="Working" data-link="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file">
+            <div class="executor-card neon-yellow-card" data-name="DELTA" data-platform="Android" data-status="Working" data-link="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file"
+                 data-description="Delta is a lightweight but powerful executor that focuses on performance and a clean UI. It's perfect for users who want a simple, no-fuss experience with reliable functionality."
+                 data-features="Easy to use,Lightweight,Good performance,Regular updates">
                 <h3 class="neon-yellow">DELTA</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
@@ -893,12 +997,27 @@
         <a href="https://www.tiktok.com/@xploitforceoffc?is_from_webapp=1&sender_device=pc" target="_blank">TIKTOK</a>
     </div>
 
+    <div id="executorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <span class="close-button">&times;</span>
+            </div>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
     <script>
         const searchInput = document.getElementById('search-input');
         const allExecutorCards = document.querySelectorAll('.executor-card');
         const filterButtons = document.querySelectorAll('.filter-btn');
         const themeToggleBtn = document.getElementById('theme-toggle-btn');
         const body = document.body;
+        const modal = document.getElementById('executorModal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeBtn = document.querySelector('.close-button');
 
         // Cek preferensi tema dari local storage atau sistem
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -981,7 +1100,8 @@
         // Fungsi untuk Copy Link
         document.querySelectorAll('.copy-button').forEach(button => {
             button.addEventListener('click', function(e) {
-                e.preventDefault(); // Mencegah link dari pindah halaman
+                e.stopPropagation(); // Mencegah klik menyebar ke kartu
+                e.preventDefault();
                 const link = this.getAttribute('data-link');
                 
                 // Menyalin ke clipboard
@@ -1041,6 +1161,63 @@
                 }, 500);
             }, 10);
         });
+
+        // Logic untuk Modal (Pop-up)
+        allExecutorCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Jangan buka modal kalau kliknya di tombol
+                if (e.target.closest('.button-container')) {
+                    return;
+                }
+                
+                const name = this.getAttribute('data-name');
+                const description = this.getAttribute('data-description');
+                const features = this.getAttribute('data-features');
+
+                modalTitle.textContent = name;
+                
+                // Isi konten modal
+                let modalContent = '';
+                if (description) {
+                    modalContent += `
+                        <h3>Description</h3>
+                        <p>${description}</p>
+                    `;
+                }
+                if (features) {
+                    const featuresArray = features.split(',').map(f => `<li>${f.trim()}</li>`).join('');
+                    modalContent += `
+                        <h3>Key Features</h3>
+                        <ul>${featuresArray}</ul>
+                    `;
+                }
+                
+                // Tambahkan link Get Executor dan Copy Link ke modal
+                const getLink = this.getAttribute('data-link');
+                const isDisabled = this.querySelector('.get-button.disabled');
+                
+                modalContent += `
+                    <div class="button-container" style="margin-top: 20px;">
+                        <a href="${getLink}" class="get-button ${isDisabled ? 'disabled' : ''}" target="_blank">Get Executor</a>
+                        <a href="#" class="copy-button" data-link="${getLink}">Copy Link</a>
+                    </div>
+                `;
+
+                modalBody.innerHTML = modalContent;
+                modal.style.display = 'block';
+            });
+        });
+        
+        // Menutup modal
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
