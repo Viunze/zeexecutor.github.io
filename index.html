@@ -22,7 +22,7 @@
             --neon-blue: #00e6ff;
             --neon-pink: #ff00ff;
             --neon-yellow: #f0ff00;
-            --neon-red: #ff3131; /* Warna neon baru */
+            --neon-red: #ff3131;
         }
 
         body {
@@ -34,7 +34,7 @@
             text-align: center;
             overflow-x: hidden;
             cursor: none;
-            text-transform: uppercase; /* SEMUA TEKS KAPITAL */
+            text-transform: uppercase;
         }
         
         .cursor-trail-element {
@@ -262,6 +262,42 @@
             cursor: not-allowed;
             color: #ddd;
             pointer-events: none;
+        }
+
+        /* Gaya baru untuk bagian media sosial */
+        .social-media-links {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid var(--neon-pink);
+            text-align: center;
+        }
+
+        .social-media-links h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        .social-media-links a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .social-media-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .social-media-links img {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
         }
         
         @media (max-width: 600px) {
@@ -528,6 +564,19 @@
         </div>
     </div>
     
+    <div class="social-media-links">
+        <h4>FOLLOW US</h4>
+        <a href="https://discord.com/invite/QjsgcpFDDr" target="_blank">
+            <img src="https://placehold.co/30x30" alt="DISCORD LOGO">
+        </a>
+        <a href="https://chat.whatsapp.com/CTzzMGBGnkJ3jgdfSF0y4d" target="_blank">
+            <img src="https://placehold.co/30x30" alt="WHATSAPP LOGO">
+        </a>
+        <a href="https://www.tiktok.com/@xploitforceoffc?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img src="https://placehold.co/30x30" alt="TIKTOK LOGO">
+        </a>
+    </div>
+
     <script>
         const searchInput = document.getElementById('search-input');
         const allExecutorCards = document.querySelectorAll('.executor-card');
