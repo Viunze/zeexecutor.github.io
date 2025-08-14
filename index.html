@@ -21,6 +21,7 @@
             --neon-green: #00ff80;
             --neon-blue: #00e5ff;
             --neon-pink: #ff00c8;
+            --neon-yellow: #ffeb3b;
         }
 
         body {
@@ -57,11 +58,34 @@
             margin: 0 auto;
         }
 
+        /* Rainbow Neon Animation */
+        @keyframes rainbow-glow {
+            0% {
+                color: var(--neon-green);
+                text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+            }
+            25% {
+                color: var(--neon-blue);
+                text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+            }
+            50% {
+                color: var(--neon-pink);
+                text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+            }
+            75% {
+                color: var(--neon-yellow);
+                text-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow);
+            }
+            100% {
+                color: var(--neon-green);
+                text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+            }
+        }
+
         h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5em;
-            color: var(--accent-color);
-            text-shadow: 0 0 15px rgba(0, 255, 128, 0.8), 0 0 20px rgba(0, 255, 128, 0.4);
+            animation: rainbow-glow 4s infinite ease-in-out;
             margin-bottom: 5px;
             letter-spacing: 2px;
             transition: transform 0.5s ease-in-out;
@@ -86,28 +110,28 @@
             max-width: 500px;
             padding: 12px 20px;
             border-radius: 30px;
-            border: 2px solid var(--accent-color);
+            border: 2px solid var(--neon-blue); /* Diubah ke neon-blue */
             background-color: #333;
             color: #fff;
             font-size: 1em;
-            box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
             outline: none;
             transition: all 0.3s ease;
         }
 
         #search-input:focus {
             border-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
         }
         
         .platform-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.8em;
             font-weight: 700;
-            color: var(--accent-color);
+            color: var(--neon-pink); /* Diubah ke neon-pink */
             text-align: left;
             margin: 40px 0 20px 0;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid var(--neon-pink);
             padding-bottom: 5px;
         }
 
@@ -131,8 +155,8 @@
         
         .executor-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 255, 128, 0.3);
-            border-color: var(--accent-color);
+            box-shadow: 0 8px 25px rgba(255, 0, 200, 0.3); /* Diubah ke neon-pink */
+            border-color: var(--neon-pink);
         }
 
         .executor-card h3 {
@@ -202,7 +226,7 @@
             margin-top: 15px;
             border: none;
             border-radius: 10px;
-            background-color: var(--accent-color);
+            background-color: var(--working-color); /* Warna tombol tetap hijau agar konsisten dengan status */
             color: var(--bg-color);
             font-weight: 700;
             font-size: 1em;
@@ -213,7 +237,7 @@
         }
         
         .get-button:hover {
-            background-color: #00e676;
+            background-color: #66bb6a;
             transform: translateY(-2px);
         }
         
@@ -397,7 +421,7 @@
         });
         
         // --- Cursor Trail Animation ---
-        const colors = ['#00ff80', '#00e5ff', '#ff00c8', '#ffcc00']; // Warna-warna neon
+        const colors = ['#00ff80', '#00e5ff', '#ff00c8', '#ffeb3b']; // Warna-warna neon
         let lastTimestamp = 0;
         const trailFrequency = 16; // Buat trail setiap 16ms
 
