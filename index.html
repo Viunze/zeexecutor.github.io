@@ -98,6 +98,12 @@
         .subtitle {
             font-size: 1.1em;
             color: #ccc;
+            margin-bottom: 5px;
+        }
+
+        .last-updated {
+            font-size: 0.8em;
+            color: #777;
             margin-bottom: 25px;
         }
 
@@ -122,6 +128,34 @@
         #search-input:focus {
             border-color: #fff;
             box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Gaya untuk Filter Button */
+        .filter-buttons {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-buttons button {
+            background: #222;
+            color: var(--text-color);
+            border: 2px solid #555;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .filter-buttons button:hover,
+        .filter-buttons button.active {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
         }
         
         .platform-title {
@@ -150,6 +184,7 @@
             transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
             position: relative;
             border: 1px solid var(--border-color);
+            display: block; /* Default display */
         }
         
         /* WARNA NEON UNTUK NAMA EXECUTOR */
@@ -313,9 +348,16 @@
     <div class="container" id="main-content">
         <h1>ZEEXECUTOR</h1>
         <p class="subtitle">LATEST EXECUTOR LIST FOR MOBILE & WINDOWS</p>
-
-        <div class="search-container">
+        <p class="last-updated">LAST UPDATED: 15 AUGUST 2025</p> <div class="search-container">
             <input type="text" id="search-input" placeholder="SEARCH FOR AN EXECUTOR...">
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="android">Android</button>
+            <button class="filter-btn" data-filter="windows">Windows</button>
+            <button class="filter-btn" data-filter="working">Working</button>
+            <button class="filter-btn" data-filter="not working">Not Working</button>
         </div>
         
         <h2 class="platform-title">ANDROID EXECUTORS</h2>
@@ -575,6 +617,42 @@
     <script>
         const searchInput = document.getElementById('search-input');
         const allExecutorCards = document.querySelectorAll('.executor-card');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        function filterExecutors(filter) {
+            allExecutorCards.forEach(card => {
+                const platform = card.getAttribute('data-platform').toLowerCase();
+                const status = card.getAttribute('data-status').toLowerCase();
+                
+                let shouldDisplay = false;
+
+                if (filter === 'all') {
+                    shouldDisplay = true;
+                } else if (filter === 'android' && platform === 'android') {
+                    shouldDisplay = true;
+                } else if (filter === 'windows' && platform === 'windows') {
+                    shouldDisplay = true;
+                } else if (filter === 'working' && status === 'working') {
+                    shouldDisplay = true;
+                } else if (filter === 'not working' && status === 'not working') {
+                    shouldDisplay = true;
+                }
+
+                if (shouldDisplay) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                filterExecutors(button.getAttribute('data-filter'));
+            });
+        });
 
         searchInput.addEventListener('input', function() {
             const searchTerm = searchInput.value.toLowerCase();
@@ -591,6 +669,7 @@
             });
         });
         
+        // Efek kursor
         const colors = ['#39ff14', '#00e6ff', '#ff00ff', '#f0ff00', '#ff3131'];
         let lastTimestamp = 0;
         const trailFrequency = 16;
