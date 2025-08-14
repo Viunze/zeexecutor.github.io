@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeExecutor - Mobile & Windows Executor List</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-shadow: 0 0 5px #4CAF50;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 20px;
+        }
+        
+        #search-input {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid #4CAF50;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            box-shadow: 0 0 8px #4CAF50;
+            outline: none;
+        }
+
+        /* Executor List */
+        .executor-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .executor-card {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .executor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .executor-card h3 {
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+
+        .platform {
+            color: #bbb;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+
+        .status-working {
+            background-color: #4CAF50;
+            color: #000;
+        }
+
+        .status-nowork {
+            background-color: #f44336;
+            color: #fff;
+        }
+        
+        .status-noinfo {
+            background-color: #9e9e9e;
+            color: #fff;
+        }
+
+        /* Button */
+        .get-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #1e1e1e;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .get-button:hover {
+            background-color: #66bb6a;
+        }
+        
+        .get-button.disabled {
+            background-color: #666;
+            cursor: not-allowed;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .executor-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ZeExecutor</h1>
+    <p>Daftar executor terbaru untuk Mobile & Windows</p>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Cari executor...">
+    </div>
+
+    <div class="executor-list" id="executor-list">
+        <div class="executor-card" data-name="KRNL" data-platform="Android">
+            <h3>KRNL</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://krnl.cat/" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="FLUXUS" data-platform="Android">
+            <h3>FLUXUS (Subzero)</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://webfiles.pro/file/Fluxus.apk" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="DELTA" data-platform="Android">
+            <h3>DELTA</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="FROSTWARE" data-platform="Android">
+            <h3>FROSTWARE</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://www.mediafire.com/file/67m83qe9qodjilz/Frostware+Gen-X+V3.6.apk/file" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="ARCEUS X" data-platform="Android">
+            <h3>ARCEUS X</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://www.mediafire.com/file/6lcgdmn244ta2n5/ArceusX_1.6.4_2.668.658.ipa/file" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="CODEX" data-platform="Android">
+            <h3>CODEX</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://www.mediafire.com/file/ytyjk543b2ng8zs/Codex+v2.684.apk/file" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="CRYPTIC" data-platform="Android">
+            <h3>CRYPTIC</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://www.mediafire.com/file/7rn43l963klk9mj/Cryptic+2.684.688+APK.apk/file" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="VEGA X" data-platform="Android">
+            <h3>VEGA X</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://cdn.discordapp.com/attachments/1191528978167640125/1402142072491741184/Vega_X.apk" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="TRIGON" data-platform="Android">
+            <h3>TRIGON</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://trigonevo.com/download?os=android&fs=mediafire" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="RONIX" data-platform="Android">
+            <h3>RONIX</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-working">Working</span>
+            <a href="https://wrdcdn.net/r/154522/1754357527605/Ronix_684_(arm64).apk" class="get-button" target="_blank">Get Executor</a>
+        </div>
+
+        <div class="executor-card" data-name="VORNEX" data-platform="Android">
+            <h3>VORNEX</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-nowork">Not Working</span>
+            <a href="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file" class="get-button" target="_blank">Get Executor</a>
+        </div>
+        
+        <div class="executor-card" data-name="H202" data-platform="Android">
+            <h3>H202</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-nowork">Not Working</span>
+            <a href="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY" class="get-button" target="_blank">Get Executor</a>
+        </div>
+
+        <div class="executor-card" data-name="NEBULA" data-platform="Android">
+            <h3>NEBULA</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-noinfo">No Information</span>
+            <a href="#" class="get-button disabled">No Link Available</a>
+        </div>
+        
+        <div class="executor-card" data-name="ILLUSION" data-platform="Android">
+            <h3>ILLUSION</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-noinfo">No Information</span>
+            <a href="#" class="get-button disabled">No Link Available</a>
+        </div>
+
+        <div class="executor-card" data-name="CUBIX" data-platform="Android">
+            <h3>CUBIX</h3>
+            <div class="platform">Platform: Android</div>
+            <span class="status-badge status-noinfo">No Information</span>
+            <a href="#" class="get-button disabled">No Link Available</a>
+        </div>
+    </div>
+    
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const executorList = document.getElementById('executor-list');
+        const executorCards = executorList.querySelectorAll('.executor-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            executorCards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                const platform = card.getAttribute('data-platform').toLowerCase();
+                const status = card.querySelector('.status-badge').innerText.toLowerCase();
+
+                if (name.includes(searchTerm) || platform.includes(searchTerm) || status.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
