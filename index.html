@@ -18,10 +18,10 @@
             --not-working-color: #f44336;
             --no-info-color: #9e9e9e;
             
-            --neon-green: #00ff80;
-            --neon-blue: #00e5ff;
-            --neon-pink: #ff00c8;
-            --neon-yellow: #ffeb3b;
+            --neon-green: #39ff14; /* Lebih mencolok */
+            --neon-blue: #00e6ff; /* Lebih mencolok */
+            --neon-pink: #ff00ff; /* Lebih mencolok */
+            --neon-yellow: #f0ff00; /* Lebih mencolok */
         }
 
         body {
@@ -110,7 +110,7 @@
             max-width: 500px;
             padding: 12px 20px;
             border-radius: 30px;
-            border: 2px solid var(--neon-blue); /* Diubah ke neon-blue */
+            border: 2px solid var(--neon-blue); 
             background-color: #333;
             color: #fff;
             font-size: 1em;
@@ -128,7 +128,7 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 1.8em;
             font-weight: 700;
-            color: var(--neon-pink); /* Diubah ke neon-pink */
+            color: var(--neon-pink); 
             text-align: left;
             margin: 40px 0 20px 0;
             border-bottom: 2px solid var(--neon-pink);
@@ -153,24 +153,6 @@
             border: 1px solid var(--border-color);
         }
         
-        .executor-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(255, 0, 200, 0.3); /* Diubah ke neon-pink */
-            border-color: var(--neon-pink);
-        }
-
-        .executor-card h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.5em;
-            transition: color 0.3s;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-        }
-        .executor-card h3 small {
-            font-size: 0.7em;
-            color: #aaa;
-            font-weight: 400;
-        }
-        
         /* Neon Colors for Executor Names */
         .neon-green {
             color: var(--neon-green);
@@ -184,7 +166,44 @@
             color: var(--neon-pink);
             text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
         }
-        
+        .neon-yellow {
+            color: var(--neon-yellow);
+            text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow);
+        }
+
+        /* Dynamic Hover Animations */
+        .neon-green-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(57, 255, 20, 0.4);
+            border-color: var(--neon-green);
+        }
+        .neon-blue-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 230, 255, 0.4);
+            border-color: var(--neon-blue);
+        }
+        .neon-pink-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 0, 255, 0.4);
+            border-color: var(--neon-pink);
+        }
+        .neon-yellow-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(240, 255, 0, 0.4);
+            border-color: var(--neon-yellow);
+        }
+
+        .executor-card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.5em;
+            transition: color 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+        .executor-card h3 small {
+            font-size: 0.7em;
+            color: #aaa;
+            font-weight: 400;
+        }
 
         .platform {
             color: #bbb;
@@ -226,7 +245,7 @@
             margin-top: 15px;
             border: none;
             border-radius: 10px;
-            background-color: var(--working-color); /* Warna tombol tetap hijau agar konsisten dengan status */
+            background-color: var(--working-color); 
             color: var(--bg-color);
             font-weight: 700;
             font-size: 1em;
@@ -268,105 +287,105 @@
         <h2 class="platform-title">Android Executors</h2>
 
         <div class="executor-list" id="executor-list-android">
-            <div class="executor-card" data-name="KRNL" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-green-card" data-name="KRNL" data-platform="Android" data-status="Working">
                 <h3 class="neon-green">KRNL</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://krnl.ca/" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="FLUXUS Subzero" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-blue-card" data-name="FLUXUS Subzero" data-platform="Android" data-status="Working">
                 <h3 class="neon-blue">FLUXUS <small>(Subzero)</small></h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://webfiles.pro/file/Fluxus.apk" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="DELTA" data-platform="Android" data-status="Working">
+            <div class="executor-card neon-pink-card" data-name="DELTA" data-platform="Android" data-status="Working">
                 <h3 class="neon-pink">DELTA</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="FROSTWARE" data-platform="Android" data-status="Working">
-                <h3 class="neon-green">FROSTWARE</h3>
+            <div class="executor-card neon-yellow-card" data-name="FROSTWARE" data-platform="Android" data-status="Working">
+                <h3 class="neon-yellow">FROSTWARE</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/67m83qe9qodjilz/Frostware+Gen-X+V3.6.apk/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="ARCEUS X" data-platform="Android" data-status="Working">
-                <h3 class="neon-blue">ARCEUS X</h3>
+            <div class="executor-card neon-green-card" data-name="ARCEUS X" data-platform="Android" data-status="Working">
+                <h3 class="neon-green">ARCEUS X</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/6lcgdmn244ta2n5/ArceusX_1.6.4_2.668.658.ipa/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="CODEX" data-platform="Android" data-status="Working">
-                <h3 class="neon-pink">CODEX</h3>
+            <div class="executor-card neon-blue-card" data-name="CODEX" data-platform="Android" data-status="Working">
+                <h3 class="neon-blue">CODEX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/ytyjk543b2ng8zs/Codex+v2.684.apk/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="CRYPTIC" data-platform="Android" data-status="Working">
-                <h3 class="neon-green">CRYPTIC</h3>
+            <div class="executor-card neon-pink-card" data-name="CRYPTIC" data-platform="Android" data-status="Working">
+                <h3 class="neon-pink">CRYPTIC</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/7rn43l963klk9mj/Cryptic+2.684.688+APK.apk/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="VEGA X" data-platform="Android" data-status="Working">
-                <h3 class="neon-blue">VEGA X</h3>
+            <div class="executor-card neon-yellow-card" data-name="VEGA X" data-platform="Android" data-status="Working">
+                <h3 class="neon-yellow">VEGA X</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://cdn.discordapp.com/attachments/1191528978167640125/1402142072491741184/Vega_X.apk" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="TRIGON" data-platform="Android" data-status="Working">
-                <h3 class="neon-pink">TRIGON</h3>
+            <div class="executor-card neon-green-card" data-name="TRIGON" data-platform="Android" data-status="Working">
+                <h3 class="neon-green">TRIGON</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://trigonevo.com/download?os=android&fs=mediafire" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="RONIX" data-platform="Android" data-status="Working">
-                <h3 class="neon-green">RONIX</h3>
+            <div class="executor-card neon-blue-card" data-name="RONIX" data-platform="Android" data-status="Working">
+                <h3 class="neon-blue">RONIX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://wrdcdn.net/r/154522/1754357527605/Ronix_684_(arm64).apk" class="get-button" target="_blank">Get Executor</a>
             </div>
 
-            <div class="executor-card" data-name="VORNEX" data-platform="Android" data-status="Not Working">
-                <h3 class="neon-blue">VORNEX</h3>
+            <div class="executor-card neon-pink-card" data-name="VORNEX" data-platform="Android" data-status="Not Working">
+                <h3 class="neon-pink">VORNEX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="H202" data-platform="Android" data-status="Not Working">
-                <h3 class="neon-pink">H202</h3>
+            <div class="executor-card neon-yellow-card" data-name="H202" data-platform="Android" data-status="Not Working">
+                <h3 class="neon-yellow">H202</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY" class="get-button" target="_blank">Get Executor</a>
             </div>
 
-            <div class="executor-card" data-name="NEBULA" data-platform="Android" data-status="No Information">
+            <div class="executor-card neon-green-card" data-name="NEBULA" data-platform="Android" data-status="No Information">
                 <h3 class="neon-green">NEBULA</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
                 <a href="#" class="get-button disabled">No Link Available</a>
             </div>
             
-            <div class="executor-card" data-name="ILLUSION" data-platform="Android" data-status="No Information">
+            <div class="executor-card neon-blue-card" data-name="ILLUSION" data-platform="Android" data-status="No Information">
                 <h3 class="neon-blue">ILLUSION</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
                 <a href="#" class="get-button disabled">No Link Available</a>
             </div>
 
-            <div class="executor-card" data-name="CUBIX" data-platform="Android" data-status="No Information">
+            <div class="executor-card neon-pink-card" data-name="CUBIX" data-platform="Android" data-status="No Information">
                 <h3 class="neon-pink">CUBIX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
@@ -377,21 +396,21 @@
         <h2 class="platform-title">Windows Executors</h2>
 
         <div class="executor-list" id="executor-list-windows">
-            <div class="executor-card" data-name="FLUXUS" data-platform="Windows" data-status="Working">
+            <div class="executor-card neon-green-card" data-name="FLUXUS" data-platform="Windows" data-status="Working">
                 <h3 class="neon-green">FLUXUS</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="#" class="get-button">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="DELTA" data-platform="Windows" data-status="Not Working">
+            <div class="executor-card neon-blue-card" data-name="DELTA" data-platform="Windows" data-status="Not Working">
                 <h3 class="neon-blue">DELTA</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="#" class="get-button disabled">Get Executor</a>
             </div>
             
-            <div class="executor-card" data-name="SYNAPSE" data-platform="Windows" data-status="No Information">
+            <div class="executor-card neon-pink-card" data-name="SYNAPSE" data-platform="Windows" data-status="No Information">
                 <h3 class="neon-pink">SYNAPSE</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-noinfo">No Information</span>
@@ -421,7 +440,7 @@
         });
         
         // --- Cursor Trail Animation ---
-        const colors = ['#00ff80', '#00e5ff', '#ff00c8', '#ffeb3b']; // Warna-warna neon
+        const colors = ['#39ff14', '#00e6ff', '#ff00ff', '#f0ff00']; // Warna-warna neon
         let lastTimestamp = 0;
         const trailFrequency = 16; // Buat trail setiap 16ms
 
