@@ -18,10 +18,10 @@
             --not-working-color: #f44336;
             --no-info-color: #9e9e9e;
             
-            --neon-green: #39ff14; /* Lebih mencolok */
-            --neon-blue: #00e6ff; /* Lebih mencolok */
-            --neon-pink: #ff00ff; /* Lebih mencolok */
-            --neon-yellow: #f0ff00; /* Lebih mencolok */
+            --neon-green: #39ff14;
+            --neon-blue: #00e6ff;
+            --neon-pink: #ff00ff;
+            --neon-yellow: #f0ff00;
         }
 
         body {
@@ -32,11 +32,12 @@
             padding: 20px;
             text-align: center;
             overflow-x: hidden;
-            cursor: none; /* Menyembunyikan kursor asli */
+            cursor: none;
         }
         
+        /* FIX: Animasi trail kursor permanen */
         .cursor-trail-element {
-            position: absolute;
+            position: fixed;
             width: 10px;
             height: 10px;
             background: rgba(255, 255, 255, 0.7);
@@ -50,7 +51,7 @@
         }
         
         #main-content {
-            cursor: auto; /* Mengembalikan kursor asli untuk konten utama */
+            cursor: auto;
         }
 
         .container {
@@ -58,7 +59,6 @@
             margin: 0 auto;
         }
 
-        /* Rainbow Neon Animation */
         @keyframes rainbow-glow {
             0% {
                 color: var(--neon-green);
@@ -100,7 +100,6 @@
             margin-bottom: 25px;
         }
 
-        /* Search Bar */
         .search-container {
             margin-bottom: 30px;
         }
@@ -135,7 +134,6 @@
             padding-bottom: 5px;
         }
 
-        /* Executor List */
         .executor-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -153,7 +151,6 @@
             border: 1px solid var(--border-color);
         }
         
-        /* Neon Colors for Executor Names */
         .neon-green {
             color: var(--neon-green);
             text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
@@ -171,7 +168,6 @@
             text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow);
         }
 
-        /* Dynamic Hover Animations */
         .neon-green-card:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 8px 25px rgba(57, 255, 20, 0.4);
@@ -211,7 +207,6 @@
             margin-bottom: 15px;
         }
 
-        /* Status Badges */
         .status-badge {
             display: inline-block;
             padding: 6px 12px;
@@ -237,7 +232,6 @@
             color: #fff;
         }
 
-        /* Button */
         .get-button {
             display: block;
             width: 100%;
@@ -361,14 +355,14 @@
                 <h3 class="neon-yellow">VORNEX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-nowork">Not Working</span>
-                <a href="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file" class="get-button" target="_blank">Get Executor</a>
+                <a href="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file" class="get-button disabled" target="_blank">Get Executor</a>
             </div>
             
             <div class="executor-card neon-green-card" data-name="H202" data-platform="Android" data-status="Not Working">
                 <h3 class="neon-green">H202</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-nowork">Not Working</span>
-                <a href="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY" class="get-button" target="_blank">Get Executor</a>
+                <a href="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY" class="get-button disabled" target="_blank">Get Executor</a>
             </div>
 
             <div class="executor-card neon-blue-card" data-name="NEBULA" data-platform="Android" data-status="No Information">
@@ -396,27 +390,138 @@
         <h2 class="platform-title">Windows Executors</h2>
 
         <div class="executor-list" id="executor-list-windows">
-            <div class="executor-card neon-pink-card" data-name="FLUXUS" data-platform="Windows" data-status="Working">
-                <h3 class="neon-pink">FLUXUS</h3>
+            <div class="executor-card neon-green-card" data-name="bunni lol" data-platform="Windows" data-status="Working">
+                <h3 class="neon-green">bunni lol</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
-                <a href="#" class="get-button">Get Executor</a>
+                <a href="https://getbunni.lol/" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card neon-blue-card" data-name="DELTA" data-platform="Windows" data-status="Not Working">
-                <h3 class="neon-blue">DELTA</h3>
+            <div class="executor-card neon-blue-card" data-name="zenith (buy)" data-platform="Windows" data-status="Working">
+                <h3 class="neon-blue">zenith <small>(buy)</small></h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://zenith.win/" class="get-button" target="_blank">Get Executor</a>
+            </div>
+            
+            <div class="executor-card neon-pink-card" data-name="swift" data-platform="Windows" data-status="Working">
+                <h3 class="neon-pink">swift</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://getswift.gg/download" class="get-button" target="_blank">Get Executor</a>
+            </div>
+            
+            <div class="executor-card neon-yellow-card" data-name="velocity" data-platform="Windows" data-status="Working">
+                <h3 class="neon-yellow">velocity</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://getvelocity.live/" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-green-card" data-name="volcano" data-platform="Windows" data-status="Working">
+                <h3 class="neon-green">volcano</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://file.volcano.best/Download.zip" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-blue-card" data-name="pottasium (buy)" data-platform="Windows" data-status="Working">
+                <h3 class="neon-blue">pottasium <small>(buy)</small></h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://potassium.pro/" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-pink-card" data-name="plutora" data-platform="Windows" data-status="Working">
+                <h3 class="neon-pink">plutora</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://wrdcdn.net/r/87882/1747944758923/plutora%20v2.0.0.zip" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-yellow-card" data-name="seliware (buy)" data-platform="Windows" data-status="Working">
+                <h3 class="neon-yellow">seliware <small>(buy)</small></h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://seliware.com/" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-green-card" data-name="jjsploit" data-platform="Windows" data-status="Working">
+                <h3 class="neon-green">jjsploit</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://github.com/wcrddn/wcrddn.github.io/raw/refs/heads/main/0605/jjsploit_8.15.0_x64_en-US.msi" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-blue-card" data-name="solara" data-platform="Windows" data-status="Working">
+                <h3 class="neon-blue">solara</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://getsolara.dev/download/static/files/BootstrapperNew.exe" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-pink-card" data-name="trigon" data-platform="Windows" data-status="Not Working">
+                <h3 class="neon-pink">trigon</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
-                <a href="#" class="get-button disabled">Get Executor</a>
+                <a href="https://gofile.io/d/leLUN2" class="get-button disabled" target="_blank">Get Executor</a>
             </div>
-            
-            <div class="executor-card neon-green-card" data-name="SYNAPSE" data-platform="Windows" data-status="No Information">
-                <h3 class="neon-green">SYNAPSE</h3>
+
+            <div class="executor-card neon-yellow-card" data-name="drift" data-platform="Windows" data-status="Working">
+                <h3 class="neon-yellow">drift</h3>
                 <div class="platform">Platform: Windows</div>
-                <span class="status-badge status-noinfo">No Information</span>
-                <a href="#" class="get-button disabled">Get Executor</a>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://wrdcdn.net/r/118757/1748613440294/Drift1.0.3.zip" class="get-button" target="_blank">Get Executor</a>
             </div>
-            
+
+            <div class="executor-card neon-green-card" data-name="sirthurt (buy)" data-platform="Windows" data-status="Working">
+                <h3 class="neon-green">sirthurt <small>(buy)</small></h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://sirhurt.net/" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-blue-card" data-name="saturn x" data-platform="Windows" data-status="Working">
+                <h3 class="neon-blue">saturn x</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://saturn-x-site.vercel.app/Bootstrapper.exe" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-pink-card" data-name="xeno" data-platform="Windows" data-status="Working">
+                <h3 class="neon-pink">xeno</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-working">Working</span>
+                <a href="https://www.xeno.onl/download" class="get-button" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-yellow-card" data-name="revelix" data-platform="Windows" data-status="Not Working">
+                <h3 class="neon-yellow">revelix</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-nowork">Not Working</span>
+                <a href="https://filerift.com/file/Hr0PxidPHf" class="get-button disabled" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-green-card" data-name="awp (buy)" data-platform="Windows" data-status="Not Working">
+                <h3 class="neon-green">awp <small>(buy)</small></h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-nowork">Not Working</span>
+                <a href="https://buyawp.gg/" class="get-button disabled" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-blue-card" data-name="ronix" data-platform="Windows" data-status="Not Working">
+                <h3 class="neon-blue">ronix</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-nowork">Not Working</span>
+                <a href="https://cdnwrd2.com/r/154522/1743965069251/Bootstrapper.exe" class="get-button disabled" target="_blank">Get Executor</a>
+            </div>
+
+            <div class="executor-card neon-pink-card" data-name="wave" data-platform="Windows" data-status="Not Working">
+                <h3 class="neon-pink">wave</h3>
+                <div class="platform">Platform: Windows</div>
+                <span class="status-badge status-nowork">Not Working</span>
+                <a href="https://getwave.gg/" class="get-button disabled" target="_blank">Get Executor</a>
+            </div>
         </div>
     </div>
     
@@ -442,7 +547,7 @@
         // --- Cursor Trail Animation ---
         const colors = ['#39ff14', '#00e6ff', '#ff00ff', '#f0ff00']; // Warna-warna neon
         let lastTimestamp = 0;
-        const trailFrequency = 16; // Buat trail setiap 16ms
+        const trailFrequency = 16;
 
         document.addEventListener('mousemove', (e) => {
             const now = performance.now();
@@ -452,26 +557,3 @@
             lastTimestamp = now;
 
             const trail = document.createElement('div');
-            trail.className = 'cursor-trail-element';
-            trail.style.left = `${e.clientX}px`;
-            trail.style.top = `${e.clientY}px`;
-            trail.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            
-            document.body.appendChild(trail);
-
-            // Animasi menghilang
-            setTimeout(() => {
-                trail.style.transform = `scale(1) translate(-50%, -50%)`;
-                trail.style.opacity = '1';
-                setTimeout(() => {
-                    trail.style.transform = `scale(0.1)`;
-                    trail.style.opacity = '0';
-                    setTimeout(() => {
-                        trail.remove();
-                    }, 500);
-                }, 500);
-            }, 10);
-        });
-    </script>
-</body>
-</html>
