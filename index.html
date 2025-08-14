@@ -253,16 +253,32 @@
             font-size: 0.8em;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            transition: box-shadow 0.3s;
+        }
+        
+        /* Animasi Neon Glow */
+        @keyframes glowing-working {
+            0% { box-shadow: 0 0 5px var(--working-color); }
+            50% { box-shadow: 0 0 15px var(--working-color); }
+            100% { box-shadow: 0 0 5px var(--working-color); }
+        }
+
+        @keyframes glowing-nowork {
+            0% { box-shadow: 0 0 5px var(--not-working-color); }
+            50% { box-shadow: 0 0 15px var(--not-working-color); }
+            100% { box-shadow: 0 0 5px var(--not-working-color); }
         }
 
         .status-working {
             background-color: var(--working-color);
             color: var(--bg-color);
+            animation: glowing-working 2s infinite ease-in-out;
         }
 
         .status-nowork {
             background-color: var(--not-working-color);
             color: #fff;
+            animation: glowing-nowork 2s infinite ease-in-out;
         }
         
         .status-noinfo {
