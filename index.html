@@ -156,6 +156,7 @@
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
             outline: none;
             transition: all 0.3s ease;
+            box-sizing: border-box; /* PERBAIKAN */
         }
         body.light-mode #search-input {
             background-color: #fff;
@@ -383,6 +384,7 @@
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
+            box-sizing: border-box; /* PERBAIKAN UTAMA DI SINI */
         }
         
         .get-button:hover {
@@ -413,6 +415,7 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, color 0.3s, border-color 0.3s;
             box-shadow: 0 0 5px var(--neon-yellow);
+            box-sizing: border-box; /* PERBAIKAN UTAMA DI SINI */
         }
         body.light-mode .copy-button {
             background-color: #fff;
@@ -520,7 +523,9 @@
     <div class="container" id="main-content">
         <h1>ZEEXECUTOR</h1>
         <p class="subtitle">LATEST EXECUTOR LIST FOR MOBILE & WINDOWS</p>
-        <p class="last-updated">LAST UPDATED: 15 AUGUST 2025</p> <div class="search-container">
+        <p class="last-updated">LAST UPDATED: 15 AUGUST 2025</p>
+
+        <div class="search-container">
             <input type="text" id="search-input" placeholder="SEARCH FOR AN EXECUTOR...">
         </div>
         
