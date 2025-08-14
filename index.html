@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZeExecutor - Official List</title>
+    <title>ZEEXECUTOR - OFFICIAL LIST</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
@@ -22,6 +22,7 @@
             --neon-blue: #00e6ff;
             --neon-pink: #ff00ff;
             --neon-yellow: #f0ff00;
+            --neon-red: #ff3131; /* Warna neon baru */
         }
 
         body {
@@ -33,9 +34,9 @@
             text-align: center;
             overflow-x: hidden;
             cursor: none;
+            text-transform: uppercase; /* SEMUA TEKS KAPITAL */
         }
         
-        /* FIX: Animasi trail kursor permanen */
         .cursor-trail-element {
             position: fixed;
             width: 10px;
@@ -151,9 +152,10 @@
             border: 1px solid var(--border-color);
         }
         
-        .neon-green {
-            color: var(--neon-green);
-            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+        /* WARNA NEON UNTUK NAMA EXECUTOR */
+        .neon-red {
+            color: var(--neon-red);
+            text-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red);
         }
         .neon-blue {
             color: var(--neon-blue);
@@ -168,10 +170,11 @@
             text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow);
         }
 
-        .neon-green-card:hover {
+        /* DYNAMIC HOVER */
+        .neon-red-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(57, 255, 20, 0.4);
-            border-color: var(--neon-green);
+            box-shadow: 0 8px 25px rgba(255, 49, 49, 0.4);
+            border-color: var(--neon-red);
         }
         .neon-blue-card:hover {
             transform: translateY(-5px) scale(1.02);
@@ -271,14 +274,14 @@
 <body>
 
     <div class="container" id="main-content">
-        <h1>ZeExecutor</h1>
-        <p class="subtitle">Latest Executor List for Mobile & Windows</p>
+        <h1>ZEEXECUTOR</h1>
+        <p class="subtitle">LATEST EXECUTOR LIST FOR MOBILE & WINDOWS</p>
 
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search for an executor...">
+            <input type="text" id="search-input" placeholder="SEARCH FOR AN EXECUTOR...">
         </div>
         
-        <h2 class="platform-title">Android Executors</h2>
+        <h2 class="platform-title">ANDROID EXECUTORS</h2>
 
         <div class="executor-list" id="executor-list-android">
             <div class="executor-card neon-blue-card" data-name="KRNL" data-platform="Android" data-status="Working">
@@ -289,7 +292,7 @@
             </div>
             
             <div class="executor-card neon-pink-card" data-name="FLUXUS Subzero" data-platform="Android" data-status="Working">
-                <h3 class="neon-pink">FLUXUS <small>(Subzero)</small></h3>
+                <h3 class="neon-pink">FLUXUS <small>(SUBZERO)</small></h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://webfiles.pro/file/Fluxus.apk" class="get-button" target="_blank">Get Executor</a>
@@ -302,8 +305,8 @@
                 <a href="https://www.mediafire.com/file/2yprlhq5b7ypv10/Delta_Vng-2.684.688_Up2.apk/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card neon-green-card" data-name="FROSTWARE" data-platform="Android" data-status="Working">
-                <h3 class="neon-green">FROSTWARE</h3>
+            <div class="executor-card neon-red-card" data-name="FROSTWARE" data-platform="Android" data-status="Working">
+                <h3 class="neon-red">FROSTWARE</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://www.mediafire.com/file/67m83qe9qodjilz/Frostware+Gen-X+V3.6.apk/file" class="get-button" target="_blank">Get Executor</a>
@@ -330,8 +333,8 @@
                 <a href="https://www.mediafire.com/file/7rn43l963klk9mj/Cryptic+2.684.688+APK.apk/file" class="get-button" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card neon-green-card" data-name="VEGA X" data-platform="Android" data-status="Working">
-                <h3 class="neon-green">VEGA X</h3>
+            <div class="executor-card neon-red-card" data-name="VEGA X" data-platform="Android" data-status="Working">
+                <h3 class="neon-red">VEGA X</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://cdn.discordapp.com/attachments/1191528978167640125/1402142072491741184/Vega_X.apk" class="get-button" target="_blank">Get Executor</a>
@@ -358,8 +361,8 @@
                 <a href="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file" class="get-button disabled" target="_blank">Get Executor</a>
             </div>
             
-            <div class="executor-card neon-green-card" data-name="H202" data-platform="Android" data-status="Not Working">
-                <h3 class="neon-green">H202</h3>
+            <div class="executor-card neon-red-card" data-name="H202" data-platform="Android" data-status="Not Working">
+                <h3 class="neon-red">H202</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY" class="get-button disabled" target="_blank">Get Executor</a>
@@ -369,29 +372,29 @@
                 <h3 class="neon-blue">NEBULA</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
-                <a href="#" class="get-button disabled">No Link Available</a>
+                <a href="#" class="get-button disabled">Get Executor</a>
             </div>
             
             <div class="executor-card neon-pink-card" data-name="ILLUSION" data-platform="Android" data-status="No Information">
                 <h3 class="neon-pink">ILLUSION</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
-                <a href="#" class="get-button disabled">No Link Available</a>
+                <a href="#" class="get-button disabled">Get Executor</a>
             </div>
 
             <div class="executor-card neon-yellow-card" data-name="CUBIX" data-platform="Android" data-status="No Information">
                 <h3 class="neon-yellow">CUBIX</h3>
                 <div class="platform">Platform: Android</div>
                 <span class="status-badge status-noinfo">No Information</span>
-                <a href="#" class="get-button disabled">No Link Available</a>
+                <a href="#" class="get-button disabled">Get Executor</a>
             </div>
         </div>
 
-        <h2 class="platform-title">Windows Executors</h2>
+        <h2 class="platform-title">WINDOWS EXECUTORS</h2>
 
         <div class="executor-list" id="executor-list-windows">
-            <div class="executor-card neon-green-card" data-name="bunni lol" data-platform="Windows" data-status="Working">
-                <h3 class="neon-green">bunni lol</h3>
+            <div class="executor-card neon-red-card" data-name="bunni lol" data-platform="Windows" data-status="Working">
+                <h3 class="neon-red">bunni lol</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://getbunni.lol/" class="get-button" target="_blank">Get Executor</a>
@@ -418,8 +421,8 @@
                 <a href="https://getvelocity.live/" class="get-button" target="_blank">Get Executor</a>
             </div>
 
-            <div class="executor-card neon-green-card" data-name="volcano" data-platform="Windows" data-status="Working">
-                <h3 class="neon-green">volcano</h3>
+            <div class="executor-card neon-red-card" data-name="volcano" data-platform="Windows" data-status="Working">
+                <h3 class="neon-red">volcano</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://file.volcano.best/Download.zip" class="get-button" target="_blank">Get Executor</a>
@@ -446,8 +449,8 @@
                 <a href="https://seliware.com/" class="get-button" target="_blank">Get Executor</a>
             </div>
 
-            <div class="executor-card neon-green-card" data-name="jjsploit" data-platform="Windows" data-status="Working">
-                <h3 class="neon-green">jjsploit</h3>
+            <div class="executor-card neon-red-card" data-name="jjsploit" data-platform="Windows" data-status="Working">
+                <h3 class="neon-red">jjsploit</h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://github.com/wcrddn/wcrddn.github.io/raw/refs/heads/main/0605/jjsploit_8.15.0_x64_en-US.msi" class="get-button" target="_blank">Get Executor</a>
@@ -474,8 +477,8 @@
                 <a href="https://wrdcdn.net/r/118757/1748613440294/Drift1.0.3.zip" class="get-button" target="_blank">Get Executor</a>
             </div>
 
-            <div class="executor-card neon-green-card" data-name="sirthurt (buy)" data-platform="Windows" data-status="Working">
-                <h3 class="neon-green">sirthurt <small>(buy)</small></h3>
+            <div class="executor-card neon-red-card" data-name="sirthurt (buy)" data-platform="Windows" data-status="Working">
+                <h3 class="neon-red">sirthurt <small>(buy)</small></h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-working">Working</span>
                 <a href="https://sirhurt.net/" class="get-button" target="_blank">Get Executor</a>
@@ -502,8 +505,8 @@
                 <a href="https://filerift.com/file/Hr0PxidPHf" class="get-button disabled" target="_blank">Get Executor</a>
             </div>
 
-            <div class="executor-card neon-green-card" data-name="awp (buy)" data-platform="Windows" data-status="Not Working">
-                <h3 class="neon-green">awp <small>(buy)</small></h3>
+            <div class="executor-card neon-red-card" data-name="awp (buy)" data-platform="Windows" data-status="Not Working">
+                <h3 class="neon-red">awp <small>(buy)</small></h3>
                 <div class="platform">Platform: Windows</div>
                 <span class="status-badge status-nowork">Not Working</span>
                 <a href="https://buyawp.gg/" class="get-button disabled" target="_blank">Get Executor</a>
@@ -544,8 +547,7 @@
             });
         });
         
-        // --- Cursor Trail Animation ---
-        const colors = ['#39ff14', '#00e6ff', '#ff00ff', '#f0ff00']; // Warna-warna neon
+        const colors = ['#39ff14', '#00e6ff', '#ff00ff', '#f0ff00', '#ff3131'];
         let lastTimestamp = 0;
         const trailFrequency = 16;
 
@@ -557,3 +559,25 @@
             lastTimestamp = now;
 
             const trail = document.createElement('div');
+            trail.className = 'cursor-trail-element';
+            trail.style.left = `${e.clientX}px`;
+            trail.style.top = `${e.clientY}px`;
+            trail.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.style.transform = `scale(1) translate(-50%, -50%)`;
+                trail.style.opacity = '1';
+                setTimeout(() => {
+                    trail.style.transform = `scale(0.1)`;
+                    trail.style.opacity = '0';
+                    setTimeout(() => {
+                        trail.remove();
+                    }, 500);
+                }, 500);
+            }, 10);
+        });
+    </script>
+</body>
+</html>
