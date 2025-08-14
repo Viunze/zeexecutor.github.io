@@ -284,26 +284,27 @@
             display: inline-block;
             margin: 0 15px;
             text-decoration: none;
-            transition: transform 0.3s, filter 0.3s;
+            transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+            font-weight: 600;
+            font-size: 1.1em;
+            color: var(--text-color);
+            text-shadow: none;
         }
 
         .social-media-links a:hover {
-            transform: translateY(-5px) scale(1.1);
-            filter: brightness(1.2);
+            transform: translateY(-5px);
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
         }
 
-        .social-media-links img {
-            width: 30px;
-            height: 30px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-        }
-        
         @media (max-width: 600px) {
             h1 { font-size: 2em; }
             .subtitle { font-size: 1em; }
             .executor-card { width: auto; }
+            .social-media-links a {
+                display: block;
+                margin: 10px auto;
+            }
         }
     </style>
 </head>
@@ -566,15 +567,9 @@
     
     <div class="social-media-links">
         <h4>FOLLOW US</h4>
-        <a href="https://discord.com/invite/QjsgcpFDDr" target="_blank">
-            <img src="https://placehold.co/30x30" alt="DISCORD LOGO">
-        </a>
-        <a href="https://chat.whatsapp.com/CTzzMGBGnkJ3jgdfSF0y4d" target="_blank">
-            <img src="https://placehold.co/30x30" alt="WHATSAPP LOGO">
-        </a>
-        <a href="https://www.tiktok.com/@xploitforceoffc?is_from_webapp=1&sender_device=pc" target="_blank">
-            <img src="https://placehold.co/30x30" alt="TIKTOK LOGO">
-        </a>
+        <a href="https://discord.com/invite/QjsgcpFDDr" target="_blank">DISCORD</a>
+        <a href="https://chat.whatsapp.com/CTzzMGBGnkJ3jgdfSF0y4d" target="_blank">WHATSAPP</a>
+        <a href="https://www.tiktok.com/@xploitforceoffc?is_from_webapp=1&sender_device=pc" target="_blank">TIKTOK</a>
     </div>
 
     <script>
